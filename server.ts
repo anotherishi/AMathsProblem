@@ -5,7 +5,7 @@ function handler(req: Request): Response {
   return new Response(body, {
     status: 200,
     headers: {
-      "content-type": "text/html; charset=utf-8",
+      "content-type": "text/plain; charset=utf-8",
     },
   });
 }
