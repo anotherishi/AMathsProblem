@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/anotherishi/AMathsProblem.git"
   },
+  "dependencies": {
+    "express": "expressjs/express"
+  },
   "author": "Rishi Vishwakarma",
   "license": "Fair",
   "bugs": {
