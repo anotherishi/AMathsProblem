@@ -1,24 +1,25 @@
 function listAll(dig: number): String[] {
     let arr = [];
-    let maxnum = [dig-2]
-    let digm1 = dig - 1
-    for(let i=1; i<dig; i++) maxnum.push(digm1)
-    let mn = +maxnum.join("")
+    let maxnum = [dig - 2];
+    let digm1 = dig - 1;
+    for (let i = 1; i < dig; i++) maxnum.push(digm1);
+    let mn = +maxnum.join("");
     for (let i = 0; i < mn; i++) {
         let cd = i.toString().padStart(dig, "0");
         if (numcheck(cd, dig)) arr.push(cd);
     }
     return arr;
 }
-function numcheck(num: string, dig: number): Boolean{
-    if (num[0] === "0" || (new RegExp(`[^0-${dig-1}]`)).test(num)) return false;
-    for (let i = 0; i < num.length; i++)
-        if ((count(num, i.toString())) != +num[i]) return false;
+function numcheck(num: string, dig: number): Boolean {
+    if (num[0] === "0" || new RegExp(`[^0-${dig - 1}]`).test(num)) return false;
+    for (let i = 0; i < num.length; i++) if (count(num, i.toString()) != +num[i]) return false;
     return true;
 }
 
-function count(s: string,v: string): number 
-    return (s.match((new RegExp(v,"g"))) || []).length;
+function count(s: string, v: string): number{
+    return (s.match(new RegExp(v, "g")) || []).length;
+}
+
 
 // ====================================================================
 
